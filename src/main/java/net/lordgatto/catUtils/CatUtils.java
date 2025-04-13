@@ -15,7 +15,6 @@ import org.bukkit.plugin.java.JavaPlugin;
 import java.util.logging.Logger;
 
 public final class CatUtils extends JavaPlugin {
-    // main class
 
     public static CatUtils plugin;
     public static SpiGUI spiGUI;
