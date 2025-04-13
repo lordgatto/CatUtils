@@ -5,3 +5,4 @@
 
 > [!NOTE]
 > made for Spiggot/Paper 1.21
+<img src="https://bstats.org/signatures/bukkit/CatUtils.svg">
