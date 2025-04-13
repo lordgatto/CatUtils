@@ -1,0 +1,12 @@
+AdminChat_enabled: true
+vanish_enabled: true
+invincibility_enabled: true
+special_items_enabled: true
+
+ban:
+  griefing: 30d
+  cheats: 60d
+  troll: 10d
+  swearing: 20d
+  spam: 1d
+  lag_machine: 30d

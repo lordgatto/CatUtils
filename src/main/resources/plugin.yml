@@ -1,0 +1,46 @@
+name: CatUtils
+version: '1.2'
+main: net.lordgatto.catUtils.CatUtils
+api-version: '1.21'
+prefix: CatUtils
+load: STARTUP
+authors: ["@lordgatto"]
+description: a utility plugin
+
+depend: [NBTAPI]
+
+commands:
+  getSpecialItem:
+    description: this command gives you a special item
+    usage: /getSpecialItem
+    permission: CatUtils.getSpecialItem
+
+  admin:
+    description: admin panel
+    usage: /admin
+    permission: CatUtils.admin
+
+  adminChat:
+    description: toggle admin chat
+    usage: /adminChat
+    permission: CatUtils.admin.chat
+
+  invincible:
+    description: toggle invincibility
+    usage: /invincible
+    permission: CatUtils.admin.invincible
+
+  vanish:
+    description: toggle vanish
+    usage: /vanish
+    permission: CatUtils.admin.vanish
+  
+  mode:
+    description: change gamemode
+    usage: /mode
+    permission: CatUtils.gamemode
+
+  GUItest:
+    description: a command to test the GUI
+    usage: /GUItest
+    permission: CatUtils.GUI.test
