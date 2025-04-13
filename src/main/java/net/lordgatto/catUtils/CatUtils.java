@@ -34,18 +34,21 @@ public final class CatUtils extends JavaPlugin {
         server = getServer();
         logger = getLogger();
 
-        String latest = null;
-        try {
-            latest = new String(java.net.http.HttpClient.newHttpClient().send(java.net.http.HttpRequest.newBuilder(java.net.URI.create("https://lordgatto.github.io/CatUtils/latest.txt+")).GET().build(), java.net.http.HttpResponse.BodyHandlers.ofString()).body());
 
-            if (!(getDescription().getVersion() == latest)) {
-                logger.warning("you are using an old version of CatUtils(current: " + getDescription().getVersion() + ")(latest: " + latest +")");
-            } else {
-                logger.info("you are using the latest version of CatUtils");
+        if (config.getBoolean("version_check")) {
+            String latest = null;
+            try {
+                latest = new String(java.net.http.HttpClient.newHttpClient().send(java.net.http.HttpRequest.newBuilder(java.net.URI.create("https://lordgatto.github.io/CatUtils/latest.txt+")).GET().build(), java.net.http.HttpResponse.BodyHandlers.ofString()).body());
+
+                if (!(getDescription().getVersion() == latest)) {
+                    logger.warning("you are using an old version of CatUtils(current: " + getDescription().getVersion() + ")(latest: " + latest + ")");
+                } else {
+                    logger.info("you are using the latest version of CatUtils");
+                }
+
+            } catch (Exception e) {
+                logger.warning("CatUtils wasen't able to fetch the latest version");
             }
-
-        } catch (Exception e) {
-            logger.warning("CatUtils wasen't able to fetch the latest version");
         }
 
         this.getCommand("mode").setExecutor(new commands.GameModeCommand());
